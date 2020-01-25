@@ -1,0 +1,16 @@
+base
+zoo
+xts
+TTR
+quantmod
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats
+Rsolnp
+mvtnorm

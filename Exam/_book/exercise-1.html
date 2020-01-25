@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Exercise 1 | Exam – Financial Econometrics – Andreas Kracht Frandsen</title>
+  <meta name="description" content="Exam of Financial Econometrics, Aarhus University." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Exercise 1 | Exam – Financial Econometrics – Andreas Kracht Frandsen" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Exam of Financial Econometrics, Aarhus University." />
+  <meta name="github-repo" content="afrandsen/afrandsen" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Exercise 1 | Exam – Financial Econometrics – Andreas Kracht Frandsen" />
+  
+  <meta name="twitter:description" content="Exam of Financial Econometrics, Aarhus University." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="exercise-2.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Exam - Financial Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="exercise-1.html"><a href="exercise-1.html"><i class="fa fa-check"></i><b>1</b> Exercise 1</a><ul>
+<li class="chapter" data-level="1.1" data-path="exercise-1.html"><a href="exercise-1.html#theoretical-part"><i class="fa fa-check"></i><b>1.1</b> Theoretical Part</a></li>
+<li class="chapter" data-level="1.2" data-path="exercise-1.html"><a href="exercise-1.html#computational-part"><i class="fa fa-check"></i><b>1.2</b> Computational Part</a></li>
+<li class="chapter" data-level="1.3" data-path="exercise-1.html"><a href="exercise-1.html#empirical-part"><i class="fa fa-check"></i><b>1.3</b> Empirical Part</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="exercise-1.html"><a href="exercise-1.html#gas"><i class="fa fa-check"></i><b>1.3.1</b> GAS</a></li>
+<li class="chapter" data-level="1.3.2" data-path="exercise-1.html"><a href="exercise-1.html#constrained-gas"><i class="fa fa-check"></i><b>1.3.2</b> Constrained GAS</a></li>
+<li class="chapter" data-level="1.3.3" data-path="exercise-1.html"><a href="exercise-1.html#mem"><i class="fa fa-check"></i><b>1.3.3</b> MEM</a></li>
+<li class="chapter" data-level="1.3.4" data-path="exercise-1.html"><a href="exercise-1.html#comparison"><i class="fa fa-check"></i><b>1.3.4</b> Comparison</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exercise-2.html"><a href="exercise-2.html"><i class="fa fa-check"></i><b>2</b> Exercise 2</a><ul>
+<li class="chapter" data-level="2.1" data-path="exercise-2.html"><a href="exercise-2.html#theoretical-part-1"><i class="fa fa-check"></i><b>2.1</b> Theoretical Part</a></li>
+<li class="chapter" data-level="2.2" data-path="exercise-2.html"><a href="exercise-2.html#computational-part-1"><i class="fa fa-check"></i><b>2.2</b> Computational Part</a></li>
+<li class="chapter" data-level="2.3" data-path="exercise-2.html"><a href="exercise-2.html#empirical-part-1"><i class="fa fa-check"></i><b>2.3</b> Empirical Part</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="exercise-2.html"><a href="exercise-2.html#dcc"><i class="fa fa-check"></i><b>2.3.1</b> DCC</a></li>
+<li class="chapter" data-level="2.3.2" data-path="exercise-2.html"><a href="exercise-2.html#ccc"><i class="fa fa-check"></i><b>2.3.2</b> CCC</a></li>
+<li class="chapter" data-level="2.3.3" data-path="exercise-2.html"><a href="exercise-2.html#mvp"><i class="fa fa-check"></i><b>2.3.3</b> MVP</a></li>
+<li class="chapter" data-level="2.3.4" data-path="exercise-2.html"><a href="exercise-2.html#covar"><i class="fa fa-check"></i><b>2.3.4</b> CoVaR</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercise-1" class="section level1">
+<h1><span class="header-section-number">1</span> Exercise 1</h1>
+<p>In this exercise we examine the Volaility Index (also known as: CBOE VIX) which is an index of volatility computed by the Chicago Board Options Exchange that is freely available to the public quoted in percentage points. We obtain it through Yahoo Finance, which is available through the <strong>quantmod</strong> R package. It is a commonly known measure of volatility in the US equity market and is used by both institutional and private investors. It is restrained to only take on positive values since it is a volatility measure. Market models are highly dependent on the modelling and prediction of the VIX.</p>
+<div id="theoretical-part" class="section level2">
+<h2><span class="header-section-number">1.1</span> Theoretical Part</h2>
+<p>We have that <span class="math inline">\(Y_t\)</span> is the VIX at time <span class="math inline">\(t&gt; 0\)</span> and consider the following model
+<span class="math display">\[Y_t \mid \mathcal{F}_{t-1}\sim \mathcal{G}(\mu_t, a),\quad\quad t=1,\dots,T,\]</span></p>
+<p>where <span class="math inline">\(\mathcal{G}(\mu_t, a)\)</span> is the Gamma distribution with mean <span class="math inline">\(\mu_t&gt;0\)</span> and scale <span class="math inline">\(a &gt; 0\)</span>, with probability density function
+<span class="math display">\[p(y_t \mid \mathcal{F}_{t-1})=\frac{1}{\Gamma(a)}a^a y_t^{a-1}\mu_t^{-a}\exp{-a\frac{y_t}{\mu_t}}.\]</span></p>
+<p>Where we use the parameterization of the Gamma distribution proposed by <span class="citation">(Engle and Gallo <a href="#ref-Engle2006" role="doc-biblioref">2006</a>)</span>. <span class="math inline">\(\Gamma(\cdot)\)</span> is the Gamma function. In this parameterization we have the following
+<span class="math display">\[\mathbb{E}(Y_t\mid\mathcal{F}_{t-1})=\mu_t,\quad\mathbb{V}(Y_t\mid\mathcal{F}_{t-1})=\frac{\mu_t^2}{a}.\]</span></p>
+<p>Utilizing the Generalized Autoreggresive Score Model, the updating equation or so called filter for the above mean, <span class="math inline">\(\mu_t\)</span>, becomes
+<span class="math display" id="eq:GAS">\[\begin{equation}
+\mu_t=\omega+\alpha u_{t-1}+\beta \mu_{t-1}, \tag{1.1}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(u_t=S_t\nabla_t\)</span>.</p>
+<p>It shall be noted that no link function is used, as no link function is given in the assignment. This could potentially create problems, as <span class="math inline">\(\mu_t\)</span> could become negative for certain values of <span class="math inline">\(\omega, \alpha\)</span> and <span class="math inline">\(\beta\)</span>. To obtain <span class="math inline">\(u_t\)</span> we calculate the Score function, <span class="math inline">\(\nabla_t=\nabla(y_t;\mu_t)\)</span>, but first we notice that
+<span class="math display" id="eq:l">\[\begin{align}
+\ln\left(p\left(y_t \mid \mathcal{F}_{t-1}; \mu\right)\right)&amp;=\ln\left(\frac{1}{\Gamma\left(a\right)}a^ay_t^{a-1}\mu_t^{-a}\exp\left(-a\frac{y_t}{\mu_t}\right)\right) \notag\\
+                                                             &amp;=\ln\left(a^ay_t^{a-1}\mu_t^{-a}\exp\left(-a\frac{y_t}{\mu_t}\right)\right)-\ln\left(\Gamma\left(a\right)\right) \notag\\
+                                                             &amp;=a\ln\left(a\right)+\left(a-1\right)\ln\left(y_t\right)-a\left(\frac{y_t}{\mu_t}+\ln\left(\mu\right)\right)-\ln\left(\Gamma\left(a\right)\right) \notag\\
+&amp;=\ell_t. \tag{1.2}
+\end{align}\]</span></p>
+<p>Now we take the first derivative of Equation <a href="exercise-1.html#eq:l">(1.2)</a> wrt. <span class="math inline">\(\mu_t\)</span>, to obtain the Score function
+<span class="math display" id="eq:Score">\[\begin{align}
+\nabla_t &amp;= \frac{\partial \ln\left(p\left(y_t \mid \mathcal{F}_{t-1}; \mu\right)\right)}{\partial \mu_t}\notag\\
+&amp;=\frac{\partial \ell_t}{\partial \mu_t}\notag\\
+&amp;=\frac{a\left(y_t-\mu_t\right)}{\mu_t^2} \tag{1.3}.
+\end{align}\]</span></p>
+<p>This is the Score of the conditional distribution <span class="math inline">\(p(y_t\mid \mathcal{F}_{t-1};\mu_t)\)</span>, it gives the direction of the update to <span class="math inline">\(\mu_t\)</span>, as in the well known Newton-Raphson algorithm. Next we calculate the Fisher Information Matrix, <span class="math inline">\(\mathcal{I}_t(\mu_t)\)</span>, since the scaling is defined as
+<span class="math display">\[S_t=\mathcal{I}_t^{-d}=\mathcal{I}_t^{-\frac{1}{2}}.\]</span></p>
+<p>The parameter <span class="math inline">\(d\)</span> can be selected on the basis of several reasonings: likelihood criteria, theory arguments, computational arguments, etc. We set <span class="math inline">\(d=\frac{1}{2}\)</span> on the basis of the assignment guidelines. This quantity scales the Score in order to account for the curvature of the likelihood at time <span class="math inline">\(t\)</span>. Using Equation <a href="exercise-1.html#eq:Score">(1.3)</a> we obtain
+<span class="math display">\[\begin{align*}
+\mathcal{I}_t&amp;=\mathbb{E}\left(\nabla_t^2\mid \mathcal{F}_{t-1}\right)\\
+&amp;=\mathbb{E}\left(\frac{a^2(y_t-\mu_t)^2}{\mu_t^4}\mid \mathcal{F}_{t-1}\right)\\
+&amp;=\mathbb{E}\left(\frac{a^2 y_t^2}{\mu_t^4} + \frac{a^2 \mu_t^2}{\mu_t^4} - \frac{2a^2y_t\mu_t}{\mu_t^4}\mid \mathcal{F}_{t-1}\right)\\
+&amp;=\mathbb{E}\left(\frac{a^2 y_t^2}{\mu_t^4} + \frac{a^2}{\mu_t^2} - \frac{2a^2y_t}{\mu_t^3} \mid \mathcal{F}_{t-1}\right)\\
+&amp;=\frac{a^2\mathbb{E}\left(y_t^2\mid \mathcal{F}_{t-1}\right)}{\mu_t^4}+\frac{a^2}{\mu_t^2}-\frac{2a^2\mathbb{E}\left(y_t\mid \mathcal{F}_{t-1}\right)}{\mu_t^3}\\
+&amp;=\frac{a^2\frac{\mu_t^2(1+a)}{a}}{\mu_t^4}+\frac{a^2}{\mu_t^2}-\frac{2a^2\mu_t}{\mu_t^3}\\
+&amp;=\frac{a^2\frac{(1+a)}{a}}{\mu_t^4}+\frac{a^2}{\mu_t^2}-\frac{2a^2}{\mu_t^2}\\
+&amp;=\frac{a^2}{\mu_t^2}+\frac{a}{\mu_t^2}+\frac{a^2}{\mu_t^2}-\frac{2a^2}{\mu_t^2}\\
+&amp;=\frac{a}{\mu_t^2}.
+\end{align*}\]</span></p>
+<p>Where we use the fact that <span class="math inline">\(a\)</span> is constant for all <span class="math inline">\(t\)</span>, <span class="math inline">\(\mu_t\)</span> is measurable wrt. <span class="math inline">\(\mathcal{F}_{t-1}\)</span>, and in the sixth equality uses that <span class="math inline">\(\mathbb{E}(Y_t^2\mid\mathcal{F}_{t-1})=\frac{\mu_t^2(1+a)}{a}\)</span>. Now it follows that the scaling becomes</p>
+<p><span class="math display">\[S_t=\mathcal{I}_t^{-\frac{1}{2}}=\left(\frac{a}{\mu_t^2}\right)^{-\frac{1}{2}}=\frac{\mu_t}{\sqrt{a}}.\]</span></p>
+<p>And we can obtain the term <span class="math inline">\(u_t\)</span> as
+<span class="math display" id="eq:u">\[\begin{equation}
+u_t=S_t\nabla_t=\frac{\mu_t}{\sqrt{a}}\frac{a(y_t-\mu_t)}{\mu_t^2}=\frac{\sqrt{a}(y_t-\mu_t)}{\mu_t}. \tag{1.4}
+\end{equation}\]</span></p>
+<p>We can insert Equation <a href="exercise-1.html#eq:u">(1.4)</a> into Equation <a href="exercise-1.html#eq:GAS">(1.1)</a> to obtain the final filter
+<span class="math display">\[\mu_t=\omega+\alpha \left(\frac{\sqrt{a}(y_{t-1}-\mu_{t-1})}{\mu_{t-1}}\right)+\beta \mu_{t-1}.\]</span></p>
+<p>Thus the updating equation consist of: a intercept, a score coefficient times the scaled direction, and a term consisting of an autoregressive coefficient times the previous value. We have know established the GAS model in our above setup.</p>
+<p>To find the log likelihood we use the common density <span class="math inline">\(p(y_t \mid \mathcal{F}_{t-1})\)</span> and it’s logarithm as found above
+<span class="math display">\[\begin{align*}
+\mathcal{L}\left(Y_{1:T}\mid \phi\right)&amp;=\ln\left(p\left(y_1;\phi\right)\right)+\sum_{t=2}^T \ln\left(p\left(y_t \mid \mathcal{F}_{t-1};\phi\right)\right)\\
+&amp;=\sum_{t=1}^T \ell_t\\
+&amp;=T\cdot \ln\left(\frac{a^a}{\Gamma\left(a\right)}\right)+\left(a-1\right)\sum_{t=1}^T \ln\left(y_t\right) - a \sum_{t=1}^T \ln\left(\mu_t\right)+\frac{y_t}{\mu_t}.
+\end{align*}\]</span></p>
+<p>Where <span class="math inline">\(\mu_t=\mu_t(\phi)\)</span> and with parameter vector <span class="math inline">\(\phi&#39;=(\alpha, \beta, a, \omega)\)</span>.</p>
+</div>
+<div id="computational-part" class="section level2">
+<h2><span class="header-section-number">1.2</span> Computational Part</h2>
+<p>The relevant code can be found in Appendix file ‘Code_Flow_38.R’, attached with the document through WiseFlow. The code is fully documented with comments throughout all the functions.</p>
+<p>To estimate the GAS-GAMMA model as discussed in the above Theoretical Part (and similiarly for the following models in the Empirical Part), we create three functions <strong><em>GASGAMMA_Filter</em></strong>, <strong><em>NegLogLikelihood</em></strong> and <strong><em>Estimate_GASGAMMA</em></strong>.</p>
+<p><strong><em>GASGAMMA_Filter</em></strong> is the filter for the GAS-GAMMA model. It takes the vector of values and a vector of parameters as input. Here we take use of the updating equation for <span class="math inline">\(\mu_t\)</span> established in the Theoretical Part. Through a loop we compute the next value of <span class="math inline">\(\mu_t\)</span>, from <span class="math inline">\(t=1,\dots, T\)</span>, where we set
+<span class="math display">\[\mu_1 = \mathbb{E}(\mu_t)=\frac{\omega}{1-\beta},\]</span></p>
+<p>thus the first value is set to the unconditional expectation of <span class="math inline">\(\mu_t\)</span>. Because of the possibility of negative and/or zero values we make an <em>if</em> statement checking for negative and/or zero values. Further we compute the log likelihood associated with the parameters and the values of <span class="math inline">\(\mu_t\)</span>, using the established function <span class="math inline">\(L\left(Y_{1:T}\mid \phi\right)\)</span> as deduced in the Theoretical Part.</p>
+<p><strong><em>NegLogLikelihood</em></strong> is the helper function for finding the maximum likelihood estimates of our parameters. It takes the vector of values and a vector of parameters as input. It computes the negative log likelihood
+<span class="math display">\[N\mathcal{L}=-\mathcal{L}\left(Y_{1:T}\mid \phi\right).\]</span></p>
+<p><strong><em>Estimate_GASGAMMA</em></strong> estimates the GAS-GAMMA model by first finding maximum likelihood estimates of our parameters, which are obtained by optimizing the negative log likelihood. The used optimizer, <strong><em>gosolnp</em></strong>, is available through the <strong>Rsolnp</strong> R package, it randomly chooses starting values for the parameter vector constrained to the lower and upper bounds. After convergence of a solution the final parameters are then feeded to the <strong><em>GASGAMMA_Filter</em></strong> to obtain the final filtered values of <span class="math inline">\(\mu_t\)</span> and the log likelihood value. We also compute the Bayesian Information Criterion which penalizes models with many parameters it is defined as
+<span class="math display">\[\text{BIC}=\ln(n)k-2\hat{\mathcal{L}}\left(Y_{1:T}\mid \hat{\phi}\right).\]</span></p>
+<p>Thus it serves as a measure of choosing the ‘best’ model. A lower BIC is favourable to a high BIC.</p>
+<p>Similar functions are created for the rest of the models described in the Empirical Part.</p>
+</div>
+<div id="empirical-part" class="section level2">
+<h2><span class="header-section-number">1.3</span> Empirical Part</h2>
+<p>Using Yahoo Finance data of the VIX spanning from 2010-01-01 to 2019-01-01 we estimate the GAS model using the functions written in code ‘Code_Flow_38.R’ and described in Section <a href="exercise-1.html#computational-part">1.2</a>. It shall be noted that the maximum likelihood estimates obtained are highly dependent upon the initial values set for each parameter, though using the <strong><em>gosolnp</em></strong> function which randomly sets starting values, as described above, seem to converge always.</p>
+Table <a href="exercise-1.html#tab:VIXtab">1.1</a> show the five first observations. We will only use the adjusted column.
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:VIXtab">Table 1.1: </span>The first 5 observations of VIX.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+VIX.Open
+</th>
+<th style="text-align:right;">
+VIX.High
+</th>
+<th style="text-align:right;">
+VIX.Low
+</th>
+<th style="text-align:right;">
+VIX.Close
+</th>
+<th style="text-align:right;">
+VIX.Volume
+</th>
+<th style="text-align:right;">
+VIX.Adjusted
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+21.68
+</td>
+<td style="text-align:right;">
+21.68
+</td>
+<td style="text-align:right;">
+20.03
+</td>
+<td style="text-align:right;">
+20.04
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+20.04
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20.05
+</td>
+<td style="text-align:right;">
+20.13
+</td>
+<td style="text-align:right;">
+19.34
+</td>
+<td style="text-align:right;">
+19.35
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+19.35
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19.59
+</td>
+<td style="text-align:right;">
+19.68
+</td>
+<td style="text-align:right;">
+18.77
+</td>
+<td style="text-align:right;">
+19.16
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+19.16
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19.68
+</td>
+<td style="text-align:right;">
+19.71
+</td>
+<td style="text-align:right;">
+18.70
+</td>
+<td style="text-align:right;">
+19.06
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+19.06
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19.27
+</td>
+<td style="text-align:right;">
+19.27
+</td>
+<td style="text-align:right;">
+18.11
+</td>
+<td style="text-align:right;">
+18.13
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+18.13
+</td>
+</tr>
+</tbody>
+</table>
+Figure <a href="exercise-1.html#fig:VIXfig">1.1</a> show the evolution of the time series.
+<div class="figure" style="text-align: center"><span id="fig:VIXfig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/VIXfig-1.png" alt="VIX from 2010-01-01 to 2019-01-01." width="100%" />
+<p class="caption">
+Figure 1.1: VIX from 2010-01-01 to 2019-01-01.
+</p>
+</div>
+<p>The spikes occur at events such as the Eurozone Crisis, the U.S. Debt-Ceiling Crisis, Brexit, the 2016 U.S. Election, Trump impeachment, Trade-war uncertainty, etc.</p>
+<div id="gas" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> GAS</h3>
+<p>To obtain the GAS-GAMMA model for our VIX data, we feed the relevant quantities to the relevant functions, using the constraints
+<span class="math display">\[\omega\in [-0.5, 0.5],\quad \alpha \in [0.001, 1.5],\quad \beta \in [0.01, 0.999]\quad\text{and}\quad a\in[0.1,300],\]</span></p>
+<p>as given in the assignment text. The maximum likelihood estimates of our parameters are
+<span class="math display">\[\hat{\omega}=0.499,\quad \hat{\alpha}=1.198,\quad \hat{\beta}=0.972 \quad\text{and}\quad \hat{a}=154.287.\]</span></p>
+<p>One may see that the intercept <span class="math inline">\(\hat{\omega}\)</span> is close to the upper bound, though experimenting with a higher bound, didn’t yield better results. We obtain a log likelihood of <span class="math inline">\(-3817.897\)</span> and a BIC of <span class="math inline">\(7666.694\)</span>.</p>
+</div>
+<div id="constrained-gas" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Constrained GAS</h3>
+<p>Considering the constrained version of the GAS-GAMMA model, we have to set the extra constraint
+<span class="math display">\[\mu_t=\mu\quad\forall t.\]</span></p>
+<p>We set the value of <span class="math inline">\(\mu\)</span> to the unconditional expectation
+<span class="math display">\[\mu:=\frac{\omega}{1-\beta}=\mathbb{E}(\mu_t),\]</span></p>
+<p>Thus in this constrained model there are three parameters to estimate <span class="math inline">\(\omega, \beta\)</span> and <span class="math inline">\(a\)</span>, and we never update <span class="math inline">\(\mu\)</span>. Functions as the ones desribed above in Section <a href="exercise-1.html#computational-part">1.2</a> have been made to accomplish the task of estimating in this model.</p>
+<p>Using the same constraints as in the GAS-GAMMA model for the relevant parameters
+<span class="math display">\[\omega\in [-0.5, 0.5],\quad \beta \in [0.01, 0.999]\quad\text{and}\quad a\in[0.1,300].\]</span></p>
+<p>We obtain the following maximum likelihood estimates of our parameters are
+<span class="math display">\[\hat{\omega}=0.393,\quad \hat{\beta}=0.977 \quad\text{and}\quad \hat{a}=10.396.\]</span></p>
+<p>It shall be noted that the intercept estimate is a bit volatile. We obtain a log likelihood of <span class="math inline">\(-6905.022\)</span> and a BIC of <span class="math inline">\(13833.22\)</span>. Thus the model performance is worse than the GAS-GAMMA model. This was also expected since the mean is constant throughout time, and at the same time we only estimate one parameter less. Thus the BIC penalizes the model slightly less, but still becomes higher than in the GAS-GAMMA model.</p>
+</div>
+<div id="mem" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> MEM</h3>
+<p>The Multiplicative Error Models suggested by <span class="citation">(Engle and Gallo <a href="#ref-Engle2006" role="doc-biblioref">2006</a>)</span> are used to model positive valued series such as the VIX, and it serves well to use as a comparison to the GAS models above. <span class="citation">(Engle and Gallo <a href="#ref-Engle2006" role="doc-biblioref">2006</a>)</span> show that one-month-ahead forecasts made from a MEM model match well the market-based volatility measure provided by the VIX.</p>
+<p>We again assume that
+<span class="math display">\[Y_t\mid \mathcal{F}_{t-1}\sim\mathcal{G}(\mu_t,a),\]</span></p>
+<p>and the updating equation for the mean, <span class="math inline">\(\mu\)</span>, is given as
+<span class="math display">\[\mu_t=\kappa+\eta y_{t-1}+\phi \mu_{t-1}.\]</span>
+Thus the updating equation consist of: a intercept, a coefficient times the value of VIX, and a term consisting of an autoregressive coefficient times the previous value.</p>
+<p>We set the value of <span class="math inline">\(\mu_1\)</span> to the unconditional expectation
+<span class="math display">\[\mu_1:=\frac{\kappa}{1- \eta - \phi}=\mathbb{E}(\mu_t),\]</span></p>
+<p>Thus in this model there are four parameters to estimate <span class="math inline">\(\kappa, \eta, \phi\)</span> and <span class="math inline">\(a\)</span>. Functions as the ones desribed above in Section <a href="exercise-1.html#computational-part">1.2</a> have been made to accomplish the task of estimating in this model.</p>
+<p>Using the constraints
+<span class="math display">\[\kappa\in [0.1, 10],\quad \eta \in [0.01, 0.99],\quad \phi \in [0.01, 0.99]\quad\text{and}\quad a\in[0.1,300].\]</span></p>
+<p>as given in the assignment text. The maximum likelihood estimates of our parameters are
+<span class="math display">\[\hat{\kappa}=0.410,\quad \hat{\eta}=0.945,\quad \hat{\phi}=0.033 \quad\text{and}\quad \hat{a}=162.832.\]</span></p>
+<p>We obtain a log likelihood of <span class="math inline">\(-3756.546\)</span> and a BIC of <span class="math inline">\(7543.991\)</span>. Compared to the GAS-GAMMA model we observe a slightly better BIC that yields the logic that more information is obtained directly through the values of <span class="math inline">\(Y_t\)</span> than through the scaled direction <span class="math inline">\(u_t\)</span>.</p>
+</div>
+<div id="comparison" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Comparison</h3>
+<p>Table <a href="exercise-1.html#tab:comptab">1.2</a> gives a summary of the log likelihood, estimates and BIC of every model examined. Comparing the GAS-GAMMA models solely the highest log likelihood is reported by the GAS-GAMMA with time varying <span class="math inline">\(\mu\)</span>. Comparing all of the models the highest log likelihood is associated with the MEM-GAMMA model.</p>
+<p>Comparing the parameters in the GAS-GAMMA models, the contrained version has similar parameter estimates except for the scale <span class="math inline">\(a\)</span>, which is compressed to overcome the non-flexibility of the model.</p>
+<p>Comparing the autoregressive coefficients we see that <span class="math inline">\(\phi\)</span> from the MEM-GAMMA model is noticeably lower than the <span class="math inline">\(\beta\)</span>’s in the GAS-GAMMA models.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:comptab">Table 1.2: </span>Summary of all models.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat{\mathcal{L}}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat{\omega} \, (\hat{\kappa})\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat{\alpha} \, (\hat{\eta})\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat{\beta} \, (\hat{\phi})\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\hat{a}\)</span>
+</th>
+<th style="text-align:center;">
+BIC
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+GAS-GAMMA
+</td>
+<td style="text-align:center;">
+-3817.897
+</td>
+<td style="text-align:center;">
+0.4999999
+</td>
+<td style="text-align:center;">
+1.1980093
+</td>
+<td style="text-align:center;">
+0.9718792
+</td>
+<td style="text-align:center;">
+154.25382
+</td>
+<td style="text-align:center;">
+7666.694
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GAS-GAMMA-C
+</td>
+<td style="text-align:center;">
+-6905.022
+</td>
+<td style="text-align:center;">
+0.4745500
+</td>
+<td style="text-align:center;">
+0.0000000
+</td>
+<td style="text-align:center;">
+0.9721223
+</td>
+<td style="text-align:center;">
+10.39612
+</td>
+<td style="text-align:center;">
+13833.219
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MEM-GAMMA
+</td>
+<td style="text-align:center;">
+-3756.546
+</td>
+<td style="text-align:center;">
+0.4098850
+</td>
+<td style="text-align:center;">
+0.9454506
+</td>
+<td style="text-align:center;">
+0.0325772
+</td>
+<td style="text-align:center;">
+162.84565
+</td>
+<td style="text-align:center;">
+7543.991
+</td>
+</tr>
+</tbody>
+</table>
+<p>Given the fact that the MEM-GAMMA model yields best performance from a BIC perspective we have chosen to continue with this model. Thus Figure <a href="exercise-1.html#fig:MEMfig">1.2</a> gives the summary of the MEM-GAMMA model.</p>
+<div class="figure" style="text-align: center"><span id="fig:MEMfig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/MEMfig-1.png" alt="i) VIX, ii) Filtered mean, iii) Filtered variance." width="100%" />
+<p class="caption">
+Figure 1.2: i) VIX, ii) Filtered mean, iii) Filtered variance.
+</p>
+</div>
+<p>Here the conditional variance at time <span class="math inline">\(t\)</span> is computed as
+<span class="math display">\[\mathbb{V}(Y_t\mid\mathcal{F}_{t-1})=\frac{\mu_t^2}{a}.\]</span></p>
+<p>All the three time series plots are similar as expected.
+</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Engle2006">
+<p>Engle, Robert F., and Giampiero M. Gallo. 2006. “A Multiple Indicators Model for Volatility Using Intra-Daily Data.” <em>Journal of Econometrics</em> 131: 3, 27.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/afrandsen/financial-econometrics/edit/master/Exam/01-EX1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Exam_Financial_Econometrics_Andreas_Kracht_Frandsen.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

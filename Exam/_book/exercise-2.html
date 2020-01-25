@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Exercise 2 | Exam – Financial Econometrics – Andreas Kracht Frandsen</title>
+  <meta name="description" content="Exam of Financial Econometrics, Aarhus University." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Exercise 2 | Exam – Financial Econometrics – Andreas Kracht Frandsen" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Exam of Financial Econometrics, Aarhus University." />
+  <meta name="github-repo" content="afrandsen/afrandsen" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Exercise 2 | Exam – Financial Econometrics – Andreas Kracht Frandsen" />
+  
+  <meta name="twitter:description" content="Exam of Financial Econometrics, Aarhus University." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-1.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Exam - Financial Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="exercise-1.html"><a href="exercise-1.html"><i class="fa fa-check"></i><b>1</b> Exercise 1</a><ul>
+<li class="chapter" data-level="1.1" data-path="exercise-1.html"><a href="exercise-1.html#theoretical-part"><i class="fa fa-check"></i><b>1.1</b> Theoretical Part</a></li>
+<li class="chapter" data-level="1.2" data-path="exercise-1.html"><a href="exercise-1.html#computational-part"><i class="fa fa-check"></i><b>1.2</b> Computational Part</a></li>
+<li class="chapter" data-level="1.3" data-path="exercise-1.html"><a href="exercise-1.html#empirical-part"><i class="fa fa-check"></i><b>1.3</b> Empirical Part</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="exercise-1.html"><a href="exercise-1.html#gas"><i class="fa fa-check"></i><b>1.3.1</b> GAS</a></li>
+<li class="chapter" data-level="1.3.2" data-path="exercise-1.html"><a href="exercise-1.html#constrained-gas"><i class="fa fa-check"></i><b>1.3.2</b> Constrained GAS</a></li>
+<li class="chapter" data-level="1.3.3" data-path="exercise-1.html"><a href="exercise-1.html#mem"><i class="fa fa-check"></i><b>1.3.3</b> MEM</a></li>
+<li class="chapter" data-level="1.3.4" data-path="exercise-1.html"><a href="exercise-1.html#comparison"><i class="fa fa-check"></i><b>1.3.4</b> Comparison</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exercise-2.html"><a href="exercise-2.html"><i class="fa fa-check"></i><b>2</b> Exercise 2</a><ul>
+<li class="chapter" data-level="2.1" data-path="exercise-2.html"><a href="exercise-2.html#theoretical-part-1"><i class="fa fa-check"></i><b>2.1</b> Theoretical Part</a></li>
+<li class="chapter" data-level="2.2" data-path="exercise-2.html"><a href="exercise-2.html#computational-part-1"><i class="fa fa-check"></i><b>2.2</b> Computational Part</a></li>
+<li class="chapter" data-level="2.3" data-path="exercise-2.html"><a href="exercise-2.html#empirical-part-1"><i class="fa fa-check"></i><b>2.3</b> Empirical Part</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="exercise-2.html"><a href="exercise-2.html#dcc"><i class="fa fa-check"></i><b>2.3.1</b> DCC</a></li>
+<li class="chapter" data-level="2.3.2" data-path="exercise-2.html"><a href="exercise-2.html#ccc"><i class="fa fa-check"></i><b>2.3.2</b> CCC</a></li>
+<li class="chapter" data-level="2.3.3" data-path="exercise-2.html"><a href="exercise-2.html#mvp"><i class="fa fa-check"></i><b>2.3.3</b> MVP</a></li>
+<li class="chapter" data-level="2.3.4" data-path="exercise-2.html"><a href="exercise-2.html#covar"><i class="fa fa-check"></i><b>2.3.4</b> CoVaR</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercise-2" class="section level1">
+<h1><span class="header-section-number">2</span> Exercise 2</h1>
+<p>In this exercise we examine two indices: S&amp;P 500 (commonly known as S&amp;P500, with ticker ^GSPC) which is a stock market price index that that measures the stock performance of 500 large companies listed on exchanges in the United States. Many institutional and private investors consider it to be one of the best representations of the U.S. stock market. Dow Jones Industrial Average (commonly known as DOW, with ticker ^DJI) which is a stock market price index that that measures the stock performance of 30 large companies listed on exchanges in the United States. Many consider the DOW to not be a good representation of the U.S. stock market and consider the S&amp;P500, which also includes the 30 components of the DOW, to be a better representation of the U.S. stock market. We obtain both through the dataset given in the assignment, spanning from 2007-01-03 to 2019-01-01, thus the Financial Crisis is included.</p>
+<div id="theoretical-part-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Theoretical Part</h2>
+<p>We consider the bivariate random vector at time <span class="math inline">\(t&gt; 0\)</span>
+<span class="math display">\[\bf{Y}_t = \begin{pmatrix} Y_{1,t}\\ Y_{2,t} \end{pmatrix},\quad\quad t=1,\dots,T,\]</span></p>
+<p>where <span class="math inline">\(Y_{1,t}\)</span> and <span class="math inline">\(Y_{2,t}\)</span> are the given SP&amp;500 and DOW returns. We assume that <span class="math inline">\(Y_t\)</span> is a bivariate zero mean Gaussian
+<span class="math display">\[\bf{Y}_t \mid \mathcal{F}_{t-1} \sim N(\bf{0}, \bf{\Sigma}_t).\]</span></p>
+<p>We want to derive the Dynamic Conditional Correlations model for the above setup, which parameterize the conditional correlations directly. Using DCC models have a computational advantage over multivariate GARCH models, in the sense that the number of parameters to be estimated in the correlation process is independent of the number of series to be correlated.</p>
+<p>Empirical findings by <span class="citation">(Engle <a href="#ref-Engle2002" role="doc-biblioref">2002</a>)</span> show that the DCC is often the most accurate when compared to a simple multivariate GARCH and several other estimators including the exponential moving average and 100-day moving average. His findings show that this is true whether the performance criterion is mean absolute error, diagnostic tests, or tests based on value at risk calculations.</p>
+<p>To obtain the DCC model in our setup we rewrite the covariance matrix, <span class="math inline">\(\bf{\Sigma}_t\)</span>, such that we obtain
+<span class="math display">\[\bf{Y}_t \mid \mathcal{F}_{t-1} \sim N(\bf{0}, \bf{D}_t^{\frac{1}{2}}\bf{R}_t \bf{D}_t^{\frac{1}{2}}),\]</span></p>
+<p>here <span class="math inline">\(\bf{D}_t\)</span> is the diagonal matrix with elements
+<span class="math display">\[\sigma_{it}^2=\mathbb{V}(Y_{it}\mid \mathcal{F}_{t-1}),\]</span></p>
+<p>which we assume follows a Generalized Autoregressive Conditional Heteroskedasticity process of order <span class="math inline">\(p=q=1\)</span> or more commonly known as the <span class="math inline">\(\text{GARCH}(1,1)\)</span> process for <span class="math inline">\(i=1,2\)</span>. The updating equation for <span class="math inline">\(\sigma_{it}^2\)</span> thus becomes
+<span class="math display">\[\sigma_{it}^2=\omega + \alpha Y_{it-1} + \beta \sigma_{it-1}^2,\]</span></p>
+<p>where <span class="math inline">\(\omega,\alpha\)</span> and <span class="math inline">\(\beta\)</span> are unknown coefficients. <span class="math inline">\(\bf{R}_t\)</span> is the correlation matrix with elements
+<span class="math display">\[\rho_{ijt}=\text{cor}(Y_{it}, Y_{jt}\mid \mathcal{F}_{t-1}).\]</span></p>
+<p>Lastly the DCC model assumes that the correlation matrix, <span class="math inline">\(\bf{R}_t\)</span>, can be decomposed into
+<span class="math display">\[\bf{R}_t = \tilde{\bf{Q}}_t^{-\frac{1}{2}}\bf{Q}_t\tilde{\bf{Q}}_t^{-\frac{1}{2}},\]</span></p>
+<p>here <span class="math inline">\(\tilde{\bf{Q}}_t\)</span> is a diagonal matrix which contains the diagonal elements of the conditional covariance matrix, <span class="math inline">\(\bf{Q}_t\)</span>, which is given as
+<span class="math display">\[\bf{Q}_t = \bar{\bf{Q}}(1-a-b)+a\bf{\eta}_{t-1}\bf{\eta}_{t-1}&#39;+ b\bf{Q}_{t-1},\]</span></p>
+<p>where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are unknown coefficients, <span class="math inline">\(\bf{\eta}_t=\bf{D}_t^{-\frac{1}{2}}\bf{Y}_t\)</span> thus the standardized residuals and <span class="math inline">\(\bar{\bf{Q}}\)</span> is fixed to to the empirical correlation of <span class="math inline">\(\bf{\eta}_t\)</span>. To ensure that <span class="math inline">\(\bf{Q}_t\)</span> is positive definite we muse impose the constraint <span class="math inline">\(a+b&lt;1\)</span>, which will also guarantee that our model is mean reverting.</p>
+<p>To obtain the log likelihood we use the Gaussianity of our returns to obtain
+<span class="math display">\[\begin{align*}
+\ln(L_T)&amp;=-\frac{1}{2}\sum_{t=1}^T (2\ln(2\pi)+\ln(|\bf{\Sigma}_t|)+\bf{Y}_t&#39;\bf{\Sigma}_t^{-1}\bf{Y}_t)\\
+        &amp;=-\frac{1}{2}\sum_{t=1}^T (2\ln(2\pi)+\ln(|\bf{D}_t^{\frac{1}{2}}\bf{R}_t \bf{D}_t^{\frac{1}{2}}|)+\bf{Y}_t&#39;\bf{D}_t^{-\frac{1}{2}}\bf{R}_t^{-1} \bf{D}_t^{-\frac{1}{2}}\bf{Y}_t)\\
+        &amp;=-\frac{1}{2}\sum_{t=1}^T (2\ln(2\pi)+\ln(|\bf{D}_t|)+\ln(|\bf{R}_t|)+\bf{\eta}_t&#39; \bf{R}_{t}^{-1} \bf{\eta}_t)\\
+        &amp;=-\frac{1}{2}\sum_{t=1}^T (2\ln(2\pi)+\ln(|\bf{D}_t|)+\ln(|\bf{R}_t|)+\bf{\eta}_t&#39; \bf{R}_{t}^{-1} \bf{\eta}_t + \bf{Y}_t&#39; \bf{D}_t^{-\frac{1}{2}} \bf{D}_t^{-\frac{1}{2}} \bf{Y}_t - \bf{\eta}_t&#39;\bf{\eta}_t)\\
+        &amp;=-\frac{1}{2}\sum_{t=1}^T (2\ln(2\pi)+\ln(|\bf{D}_t|) + \bf{Y}_t&#39;\bf{D}_t^{-1}Y_t) - \frac{1}{2}\sum_{t=1}^T (\bf{\eta}_t&#39; \bf{R}_{t}^{-1}\bf{\eta}_t -\bf{\eta}_t&#39;\bf{\eta}_t+\ln(|\bf{R}_t|)).
+\end{align*}\]</span></p>
+<p>Where we use that <span class="math inline">\(|\bf{A}\bf{B}\bf{C}|=|\bf{A}||\bf{B}||\bf{C}|\)</span> and that <span class="math inline">\(\ln(|\bf{A}\bf{B}|)=\ln(|\bf{A}||\bf{B}|)=\ln(|\bf{A}|)+\ln(|\bf{B}|)\)</span>.</p>
+<p>Thus we have factorized the log likelihood into two parts: a volatility component and a correlation component. These are
+<span class="math display">\[\begin{align*}
+L_{V}(\theta)\equiv \ln(L_{V,T}(\theta))&amp;=-\frac{1}{2}\sum_{t=1}^T (2\ln(2\pi)+\ln(|\bf{D}_t|) + \bf{Y}_t&#39;\bf{D}_t^{-1}\bf{Y}_t)\\
+                                        &amp;=-\frac{1}{2}\sum_{t=1}^T \sum_{i=1}^2 \left(\ln(2\pi)+\ln(\sigma_{it}^2)+\frac{r_{it}^2}{\sigma_{it}^2}\right),
+\end{align*}\]</span></p>
+<p>and
+<span class="math display">\[L_{C}(\theta,\Phi)\equiv \ln(L_{C,T}(\theta,\Phi))=- \frac{1}{2}\sum_{t=1}^T (\bf{\eta}_t&#39; \bf{R}_{t}^{-1}\bf{\eta}_t -\bf{\eta}_t&#39;\bf{\eta}_t+\ln(|\bf{R}_t|)).\]</span></p>
+<p>Here <span class="math inline">\(\theta\)</span> denotes the parameter vector in <span class="math inline">\(\bf{D}_t\)</span> and <span class="math inline">\(\Phi\)</span> denotes the parameter vector in <span class="math inline">\(\bf{R}_t\)</span>. Thus
+<span class="math display">\[L(\theta,\Phi)=L_V(\theta)+L_C(\theta,\Phi).\]</span></p>
+<p>Maximizing the log likelihood becomes a two-step approach. In the first step we find
+<span class="math display">\[\hat{\theta}=\arg\max\{L_V(\theta)\},\]</span></p>
+<p>and then use this value as given in the next step
+<span class="math display">\[\max_{\phi}{L_C(\hat{\theta},\Phi)}.\]</span></p>
+<p>Under reasonable regularity conditions <span class="citation">(Engle <a href="#ref-Engle2002" role="doc-biblioref">2002</a>)</span>, consistency of the first step will ensure consistency of the second step.</p>
+<p>We can derive the Constant Conditional Correlations model as a special case of the DCC model. DCC only differs in allowing <span class="math inline">\(\bf{R}\)</span> to be time dependent. Thus the CCC model assumes
+<span class="math display">\[\bf{Y}_t \mid \mathcal{F}_{t-1} \sim N(\bf{0}, \bf{D}_t^{\frac{1}{2}}\bf{R} \bf{D}_t^{\frac{1}{2}}),\]</span></p>
+<p>where <span class="math inline">\(\bf{R}\)</span> is the correlation matrix containing the conditional correlations
+<span class="math display">\[\mathbb{E}(\bf{\eta}_{t}\bf{\eta}_t&#39;\mid \mathcal{F}_{t-1})=\bf{D}_t^{-\frac{1}{2}}\bf{\Sigma}_t\bf{D}_t^{-\frac{1}{2}}.\]</span></p>
+<p>To obtain the same <span class="math inline">\(\bf{Q}_t\)</span> throughout time we then set <span class="math inline">\(a=b=0\)</span>, such that <span class="math inline">\(\bf{Q}_t=\bf{Q}\)</span>.</p>
+</div>
+<div id="computational-part-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> Computational Part</h2>
+<p>The relevant code can be found in Appendix file ‘Code_Flow_38.R’, attached with the document through WiseFlow. The code is fully documented with comments throughout all the functions.</p>
+<p>To estimate the GARCH(1,1) model as discussed in the above Theoretical Part, we create four functions <strong><em>GARCHFilter</em></strong>, <strong><em>ObjectiveFunction</em></strong>, <strong><em>ineqfun_GARCH_WS</em></strong> and <strong><em>EstimateGARCH</em></strong>.</p>
+<p><strong><em>GARCHFilter</em></strong> is the filter for the GARCH(1,1) process. It takes a vector of values and the parameters as input. Here we take use of the updating equation for <span class="math inline">\(\sigma_{it}^2\)</span> established in the Theoretical Part. Through a loop we compute the next value of <span class="math inline">\(\sigma_{it}^2\)</span>, from <span class="math inline">\(t=1,\dots, T\)</span>, where we set the first variance to the empirical variance of the first <span class="math inline">\(10 \%\)</span> of the observations. Further we compute the log likelihood associated with the parameters and the values of <span class="math inline">\(\sigma_{it}^2\)</span>, using the established function <span class="math inline">\(L_{V}(\theta)\)</span> as deduced in the Theoretical Part.</p>
+<p><strong><em>ObjectiveFunction</em></strong> is the helper function for finding the maximum likelihood estimates of our GARCH(1,1) parameters. It takes the vector of values and a vector of parameters as input. It computes the negative log likelihood
+<span class="math display">\[N\mathcal{L}=-L_{V}(\theta).\]</span></p>
+<p><strong><em>ineqfun_GARCH_WS</em></strong> serves as a basis to evaluate the inner part of the inequality constraints that need to be satisfied to impose weak stationarity, which is
+<span class="math display">\[0&lt;\alpha+\beta&lt;1.\]</span></p>
+<p><strong><em>EstimateGARCH</em></strong> estimates the GARCH(1,1) model by first finding maximum likelihood estimates of our parameters, which are obtained by optimizing the negative log likelihood. The used optimizer, <strong><em>solnp</em></strong>, is available through the <strong>Rsolnp</strong> R package, we set initial starting values, essentially we set starting value for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> and set <span class="math inline">\(\omega\)</span> to target the unconditional variance of the GARCH(1,1) model. After convergence of a solution the final parameters are then feeded to the <strong><em>GARCH_Filter</em></strong> to obtain the final filtered values of <span class="math inline">\(\sigma_{it}^2\)</span> and the log likelihood value. We also compute the Bayesian Information Criterion and the standardized residuals <span class="math inline">\(\bf{\eta}_t\)</span>.</p>
+<p>To estimate the DCC (CCC) model as discussed in the above Theoretical Part (and similiarly for the following models in the Empirical Part), we create two functions <strong><em>DCCFilter</em></strong> and <strong><em>Estimate_DCC</em></strong>.</p>
+<p><strong><em>DCCFilter</em></strong> is the filter for the DCC (CCC) model. It takes the vector of standardized residuals, the parameters and the unconditional correlation as input. Here we take use of the equations derived for <span class="math inline">\(\bf{Q}_t\)</span> and <span class="math inline">\(\bf{R}_t\)</span> in the Theoretical Part. Further we compute the log likelihood associated with the parameters and the values of <span class="math inline">\(\bf{Q}_t\)</span> and <span class="math inline">\(\bf{R}_t\)</span>, using the established function <span class="math inline">\(L_{C}(\theta,\Phi)\)</span> as deduced in the Theoretical Part.</p>
+<p><strong><em>Estimate_DCC</em></strong> estimates the DCC (CCC) model by first finding maximum likelihood estimates of our parameters, if we are in the DCC model, which are obtained by optimizing the negative log likelihood. The used optimizer, <strong><em>solnp</em></strong>, is available through the <strong>Rsolnp</strong> R package, we set initial starting values, essentially we set starting value for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. After convergence of a solution the final parameters are then feeded to the <strong><em>DCCFilter</em></strong> to obtain the final filtered values of <span class="math inline">\(\bf{Q}_t\)</span>, <span class="math inline">\(\bf{R}_t\)</span> and the log likelihood value. We also compute the Bayesian Information Criterion.</p>
+</div>
+<div id="empirical-part-1" class="section level2">
+<h2><span class="header-section-number">2.3</span> Empirical Part</h2>
+<p>Using the updated dataset of the S&amp;P500 and DOW returns spanning from 2007-01-03 to 2019-01-01 we estimate the DCC and CCC model using the functions written in code ‘Code_Flow_38.R’ and described in Section <a href="exercise-2.html#computational-part-1">2.2</a>.</p>
+Table <a href="exercise-2.html#tab:GSPCDJItab">2.1</a> show the five first observations.
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:GSPCDJItab">Table 2.1: </span>The first 5 observations of the returns of SP500 and DOW.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+GSPC
+</th>
+<th style="text-align:right;">
+DJI
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.1038474
+</td>
+<td style="text-align:right;">
+0.0287223
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.6292226
+</td>
+<td style="text-align:right;">
+-0.6854062
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.2028799
+</td>
+<td style="text-align:right;">
+0.1845763
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-0.0705868
+</td>
+<td style="text-align:right;">
+-0.0762133
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1749414
+</td>
+<td style="text-align:right;">
+0.1849128
+</td>
+</tr>
+</tbody>
+</table>
+Figure <a href="exercise-2.html#fig:GSPCfig">2.1</a> show the evolution of the S&amp;P500 time series.
+<div class="figure" style="text-align: center"><span id="fig:GSPCfig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/GSPCfig-1.png" alt="SP500 returns from 2007-01-03 to 2019-01-01." width="100%" />
+<p class="caption">
+Figure 2.1: SP500 returns from 2007-01-03 to 2019-01-01.
+</p>
+</div>
+Figure <a href="exercise-2.html#fig:DJIfig">2.2</a> show the evolution of the DOW time series.
+<div class="figure" style="text-align: center"><span id="fig:DJIfig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/DJIfig-1.png" alt="DOW returns from 2007-01-03 to 2019-01-01." width="100%" />
+<p class="caption">
+Figure 2.2: DOW returns from 2007-01-03 to 2019-01-01.
+</p>
+</div>
+<div id="dcc" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> DCC</h3>
+<p>To obtain the DCC model for our data, we feed the relevant quantities to the relevant functions. The maximum likelihood estimates of our parameters are
+<span class="math display">\[\hat{\omega}=\begin{pmatrix}0.025\\0.023\end{pmatrix},\quad \hat{\alpha}=\begin{pmatrix}0.125\\0.13085261\end{pmatrix},\quad \hat{\beta}=\begin{pmatrix}0.857 \\ 0.851\end{pmatrix},\quad\hat{a}=0.070\quad\text{and}\quad \hat{b}=0.902.\]</span></p>
+<p>We obtain a log likelihood of <span class="math inline">\(-3688.162\)</span> and a BIC of <span class="math inline">\(7440.425\)</span>. Since the correlation matrix <span class="math inline">\(\bf{R}\)</span> is time-varying we will not post the results here. One can check the values throughout time using ‘Code_Flow_38.R’.</p>
+</div>
+<div id="ccc" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> CCC</h3>
+<p>To obtain the CCC model for our data, we feed the relevant quantities to the relevant functions setting the boolean parameter ‘CCC’ to TRUE. Which evaluates our filter using <span class="math inline">\(a=b=0\)</span> as argued earlier. The maximum likelihood estimates of our parameters are exactly the same as for the DCC, since they are the outcome of the same two GARCH(1,1) processes.</p>
+<p>The constant correlation matrix <span class="math inline">\(\bf{R}\)</span> is given as
+<span class="math display">\[\bf{R}=\begin{pmatrix}1.0000000 &amp; 0.9671498\\ 0.9671498 &amp; 1.0000000\end{pmatrix}.\]</span></p>
+<p>Which show a very high correlation. We obtain a log likelihood of <span class="math inline">\(-3894.175\)</span> and a BIC of <span class="math inline">\(7852.45\)</span>. Compared to the DCC model we observe a slightly worse BIC that yields the logic that allowing time-dependency in the correlation matrix yields better performance.</p>
+<p>Continues on next page.</p>
+
+</div>
+<div id="mvp" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> MVP</h3>
+<p>To obtain the weights associated with the Minimum Variance Portfolio we consider the risk-averse investors problem at day <span class="math inline">\(t\)</span>
+<span class="math display">\[\min_{\omega_{t\mid t+h}} \omega_{t\mid t+h}&#39;\bf{\Sigma}_{t\mid t+h}\omega_{t\mid t+h},\quad\quad \text{s.t.}\quad \omega_{t\mid t+h}&#39;\ell=1.\]</span></p>
+<p>The optimal solution can be deduced to
+<span class="math display" id="eq:mvp">\[\begin{equation}
+\omega_{t\mid t+h}&#39;^*=\frac{\bf{\Sigma}_{t\mid t+h}^{-1}\ell}{\ell&#39;\bf{\Sigma}_{t\mid t+h}^{-1}\ell}.  \tag{2.1}
+\end{equation}\]</span></p>
+<p>Thus we use the above Equation <a href="exercise-2.html#eq:mvp">(2.1)</a> to obtain the weights for the S&amp;P500 Index and DOW throughout time. Figure <a href="exercise-2.html#fig:weight-dcc-fig">2.3</a> shows the Minimum Variance Portfolio weights using the estimates obtain from the DCC model. Functions and documentation can be found in ‘Code_Flow_38.R’.</p>
+<div class="figure" style="text-align: center"><span id="fig:weight-dcc-fig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/weight-dcc-fig-1.png" alt="Minimum Variance Portfolio Weights using DCC Model. Black line represents SP500 weights, red line represents DOW weights." width="100%" />
+<p class="caption">
+Figure 2.3: Minimum Variance Portfolio Weights using DCC Model. Black line represents SP500 weights, red line represents DOW weights.
+</p>
+</div>
+<p>One may notice the relatively high shorting positions. Figure <a href="exercise-2.html#fig:weight-ccc-fig">2.4</a> shows the Minimum Variance Portfolio weights using the estimates obtain from the CCC model.</p>
+<div class="figure" style="text-align: center"><span id="fig:weight-ccc-fig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/weight-ccc-fig-1.png" alt="Minimum Variance Portfolio Weights using CCC Model. Black line represents SP500 weights, red line represents DOW weights." width="100%" />
+<p class="caption">
+Figure 2.4: Minimum Variance Portfolio Weights using CCC Model. Black line represents SP500 weights, red line represents DOW weights.
+</p>
+</div>
+<p>Using the CCC model we observe somewhat more stable positions with diminished shorting positions. This makes sense due to the constant correlation matrix. That doesn’t allow the returns to be more or less correlated through time.</p>
+</div>
+<div id="covar" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> CoVaR</h3>
+<p>We want to compute the Conditional Value at Risk, which is the value at risk (VaR) of a financial system conditional on institutions being under distress. It is defined as the <span class="math inline">\(\alpha\)</span>-quantile of the conditional distribution
+<span class="math display">\[Y_{1t}\mid Y_{2t}\leq \text{VaR}_{Y_{2t}}(\alpha).\]</span></p>
+<p>And can also be defined as
+<span class="math display">\[\text{CoVaR}_{Y_{1t}\mid Y_{2t}}(\alpha,\alpha)=F^{-1}_{Y_{1t}\mid Y_{2t}\leq \text{VaR}_{Y_{2t}}(\alpha)}(\alpha).\]</span></p>
+<p>We can find it as the solution to the equality below
+<span class="math display">\[F_{Y_{1t},Y_{2t}}(\text{CoVaR}_{Y_{1t}\mid Y_{2t}}(\alpha,\alpha),\text{VaR}_{Y_{2t}}(\alpha))=\alpha^2.\]</span></p>
+<p>This is obtained using the <em>uniroot</em> function from the <strong>stats</strong> package in R. Figure <a href="exercise-2.html#fig:covar-dcc-fig">2.5</a> shows the CoVaR using the estimates obtain from the DCC model. Functions and documentation can be found in ‘Code_Flow_38.R’.</p>
+<div class="figure" style="text-align: center"><span id="fig:covar-dcc-fig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/covar-dcc-fig-1.png" alt="CoVaR using DCC Model. Black line represents CoVaR with significance level 0.01, red line represents CoVaR with signifiance level 0.05." width="100%" />
+<p class="caption">
+Figure 2.5: CoVaR using DCC Model. Black line represents CoVaR with significance level 0.01, red line represents CoVaR with signifiance level 0.05.
+</p>
+</div>
+<p>One may notice the Financial Crisis, given the very big drop in CoVaR in 2008. Figure <a href="exercise-2.html#fig:covar-ccc-fig">2.6</a> shows the CoVaR using the estimates obtain from the CCC model.</p>
+<div class="figure" style="text-align: center"><span id="fig:covar-ccc-fig"></span>
+<img src="Exam_Financial_Econometrics_Andreas_Kracht_Frandsen_files/figure-html/covar-ccc-fig-1.png" alt="CoVaR using CCC Model. Black line represents CoVaR with significance level 0.01, red line represents CoVaR with signifiance level 0.05." width="100%" />
+<p class="caption">
+Figure 2.6: CoVaR using CCC Model. Black line represents CoVaR with significance level 0.01, red line represents CoVaR with signifiance level 0.05.
+</p>
+</div>
+<p>The CoVaR of the CCC model is indeed very similar to DCC model and it’s hard to tell where they differ. Thus we have now fully compared the DCC and CCC models.</p>
+
+
+<p></p>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Engle2002">
+<p>Engle, Robert F. 2002. “Dynamic Conditional Correlation: A Simple Class of Multivariate Generalized Autoregressive Conditional Heteroskedasticity Models.” <em>Journal of Business &amp; Economic Statistics</em> 3: 339–50.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/afrandsen/financial-econometrics/edit/master/Exam/02-EX2.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Exam_Financial_Econometrics_Andreas_Kracht_Frandsen.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

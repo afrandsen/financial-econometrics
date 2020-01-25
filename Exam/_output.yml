@@ -1,0 +1,21 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Exam - Financial Econometrics</a></li>
+    download: ["pdf"]
+    sharing:
+      facebook: no
+      github: yes
+      twitter: no
+bookdown::pdf_book:
+  includes:
+    in_header: latex/preamble.tex
+    before_body: latex/titlingpage.tex
+  latex_engine: pdflatex
+  citation_package: natbib
+  keep_tex: no
+  dev: "cairo_pdf"
+  toc: no
+bookdown::epub_book: default

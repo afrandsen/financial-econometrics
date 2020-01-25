@@ -1,0 +1,48 @@
+---
+site: bookdown::bookdown_site
+pagetitle: 'Exam -- Financial Econometrics -- Andreas Kracht Frandsen'
+documentclass: memoir
+classoption: [a4paper,oneside]
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: yes
+fontfamily: mathpazo
+github-repo: afrandsen/afrandsen
+colorlinks: yes
+urlcolor: magenta
+citecolor: magenta
+linkcolor: magenta
+nocite: '@*'
+description: "Exam of Financial Econometrics, Aarhus University."
+---
+
+\pagenumbering{roman}
+\pagestyle{mypagestyle2}
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\listoftables
+
+\newpage
+
+# Preface {-}
+
+This document answers the Exam of Financial Econometrics. The following conventions are used throughout the document:
+
+Well known rules from probability theory are marked as *italic*.
+
+R packages are marked as **bold**.
+
+R functions are marked as ***bold and italic***.
+
+References to articles or books are marked as [@Engle2006].
+
+Matrices including some chosen vectors are written in bold like $\bm{Y}$.
+
+The code used in the document is available here [Code_Flow_38.R](code/Code_Flow_38.R).
+
+\newpage

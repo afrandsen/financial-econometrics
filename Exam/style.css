@@ -1,0 +1,51 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+.caption {
+  font-style: italic;
+}
+
+table caption {
+  font-style: italic;
+  color: #777;
+}
+
+.footnote-ref {
+  border-bottom: none !important;
+}
+
+.footnote-back {
+  border-bottom: none !important;
+}
+
+a.sourceLine {
+    color: #4183c4 !important;
+    text-decoration: none !important;
+    background: 0 0 !important;
+    border-bottom: none !important;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a, a:active, a:visited, a:focus { 
+  color: #ff5aae; 
+  text-decoration: none !important;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}

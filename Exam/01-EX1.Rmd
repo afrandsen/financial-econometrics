@@ -1,0 +1,295 @@
+\mainmatter
+
+\pagenumbering{arabic}
+
+\pagestyle{mypagestyle}
+
+\setcounter{secnumdepth}{3}
+
+```{r setup01, include=FALSE}
+library(quantmod)
+library(tidyverse)
+if (knitr::is_html_output()) {
+  options(knitr.table.format = "html")
+} else {
+  options(knitr.table.format = "latex") 
+}
+```
+
+```{r setup01-plots, include=FALSE}
+if (knitr::is_html_output()) {
+  knitr::opts_chunk$set(out.width = '100%') 
+} else {
+  knitr::opts_chunk$set(out.width = '100%')
+}
+```
+
+```{r, code = readLines("scripts/Q1.R"), include=FALSE, cache=TRUE}
+```
+
+
+# Exercise 1
+
+In this exercise we examine the Volaility Index (also known as: CBOE VIX) which is an index of volatility computed by the Chicago Board Options Exchange that is freely available to the public quoted in percentage points. We obtain it through Yahoo Finance, which is available through the **quantmod** R package. It is a commonly known measure of volatility in the US equity market and is used by both institutional and private investors. It is restrained to only take on positive values since it is a volatility measure. Market models are highly dependent on the modelling and prediction of the VIX.
+
+## Theoretical Part
+
+We have that $Y_t$ is the VIX at time $t> 0$ and consider the following model
+$$Y_t \mid \mathcal{F}_{t-1}\sim \mathcal{G}(\mu_t, a),\quad\quad t=1,\dots,T,$$
+
+where $\mathcal{G}(\mu_t, a)$ is the Gamma distribution with mean $\mu_t>0$ and scale $a > 0$, with probability density function
+$$p(y_t \mid \mathcal{F}_{t-1})=\frac{1}{\Gamma(a)}a^a y_t^{a-1}\mu_t^{-a}\exp{-a\frac{y_t}{\mu_t}}.$$
+
+Where we use the parameterization of the Gamma distribution proposed by [@Engle2006]. $\Gamma(\cdot)$ is the Gamma function. In this parameterization we have the following
+$$\mathbb{E}(Y_t\mid\mathcal{F}_{t-1})=\mu_t,\quad\mathbb{V}(Y_t\mid\mathcal{F}_{t-1})=\frac{\mu_t^2}{a}.$$
+
+Utilizing the Generalized Autoreggresive Score Model, the updating equation or so called filter for the above mean, $\mu_t$, becomes
+\begin{equation}
+\mu_t=\omega+\alpha u_{t-1}+\beta \mu_{t-1}, (\#eq:GAS)
+\end{equation}
+
+where $u_t=S_t\nabla_t$.
+
+It shall be noted that no link function is used, as no link function is given in the assignment. This could potentially create problems, as $\mu_t$ could become negative for certain values of $\omega, \alpha$ and $\beta$. To obtain $u_t$ we calculate the Score function, $\nabla_t=\nabla(y_t;\mu_t)$, but first we notice that
+\begin{align}
+\ln\left(p\left(y_t \mid \mathcal{F}_{t-1}; \mu\right)\right)&=\ln\left(\frac{1}{\Gamma\left(a\right)}a^ay_t^{a-1}\mu_t^{-a}\exp\left(-a\frac{y_t}{\mu_t}\right)\right) \notag\\
+                                                             &=\ln\left(a^ay_t^{a-1}\mu_t^{-a}\exp\left(-a\frac{y_t}{\mu_t}\right)\right)-\ln\left(\Gamma\left(a\right)\right) \notag\\
+                                                             &=a\ln\left(a\right)+\left(a-1\right)\ln\left(y_t\right)-a\left(\frac{y_t}{\mu_t}+\ln\left(\mu\right)\right)-\ln\left(\Gamma\left(a\right)\right) \notag\\
+&=\ell_t. (\#eq:l)
+\end{align}
+
+Now we take the first derivative of Equation \@ref(eq:l) wrt. $\mu_t$, to obtain the Score function
+\begin{align}
+\nabla_t &= \frac{\partial \ln\left(p\left(y_t \mid \mathcal{F}_{t-1}; \mu\right)\right)}{\partial \mu_t}\notag\\
+&=\frac{\partial \ell_t}{\partial \mu_t}\notag\\
+&=\frac{a\left(y_t-\mu_t\right)}{\mu_t^2} (\#eq:Score).
+\end{align}
+
+This is the Score of the conditional distribution $p(y_t\mid \mathcal{F}_{t-1};\mu_t)$, it gives the direction of the update to $\mu_t$, as in the well known Newton-Raphson algorithm. Next we calculate the Fisher Information Matrix, $\mathcal{I}_t(\mu_t)$, since the scaling is defined as
+$$S_t=\mathcal{I}_t^{-d}=\mathcal{I}_t^{-\frac{1}{2}}.$$
+
+The parameter $d$ can be selected on the basis of several reasonings: likelihood criteria, theory arguments, computational arguments, etc. We set $d=\frac{1}{2}$ on the basis of the assignment guidelines. This quantity scales the Score in order to account for the curvature of the likelihood at time $t$. Using Equation \@ref(eq:Score) we obtain
+\begin{align*}
+\mathcal{I}_t&=\mathbb{E}\left(\nabla_t^2\mid \mathcal{F}_{t-1}\right)\\
+&=\mathbb{E}\left(\frac{a^2(y_t-\mu_t)^2}{\mu_t^4}\mid \mathcal{F}_{t-1}\right)\\
+&=\mathbb{E}\left(\frac{a^2 y_t^2}{\mu_t^4} + \frac{a^2 \mu_t^2}{\mu_t^4} - \frac{2a^2y_t\mu_t}{\mu_t^4}\mid \mathcal{F}_{t-1}\right)\\
+&=\mathbb{E}\left(\frac{a^2 y_t^2}{\mu_t^4} + \frac{a^2}{\mu_t^2} - \frac{2a^2y_t}{\mu_t^3} \mid \mathcal{F}_{t-1}\right)\\
+&=\frac{a^2\mathbb{E}\left(y_t^2\mid \mathcal{F}_{t-1}\right)}{\mu_t^4}+\frac{a^2}{\mu_t^2}-\frac{2a^2\mathbb{E}\left(y_t\mid \mathcal{F}_{t-1}\right)}{\mu_t^3}\\
+&=\frac{a^2\frac{\mu_t^2(1+a)}{a}}{\mu_t^4}+\frac{a^2}{\mu_t^2}-\frac{2a^2\mu_t}{\mu_t^3}\\
+&=\frac{a^2\frac{(1+a)}{a}}{\mu_t^4}+\frac{a^2}{\mu_t^2}-\frac{2a^2}{\mu_t^2}\\
+&=\frac{a^2}{\mu_t^2}+\frac{a}{\mu_t^2}+\frac{a^2}{\mu_t^2}-\frac{2a^2}{\mu_t^2}\\
+&=\frac{a}{\mu_t^2}.
+\end{align*}
+
+Where we use the fact that $a$ is constant for all $t$, $\mu_t$ is measurable wrt. $\mathcal{F}_{t-1}$, and in the sixth equality uses that $\mathbb{E}(Y_t^2\mid\mathcal{F}_{t-1})=\frac{\mu_t^2(1+a)}{a}$. Now it follows that the scaling becomes
+
+$$S_t=\mathcal{I}_t^{-\frac{1}{2}}=\left(\frac{a}{\mu_t^2}\right)^{-\frac{1}{2}}=\frac{\mu_t}{\sqrt{a}}.$$
+
+And we can obtain the term $u_t$ as
+\begin{equation}
+u_t=S_t\nabla_t=\frac{\mu_t}{\sqrt{a}}\frac{a(y_t-\mu_t)}{\mu_t^2}=\frac{\sqrt{a}(y_t-\mu_t)}{\mu_t}. (\#eq:u)
+\end{equation}
+
+We can insert Equation \@ref(eq:u) into Equation \@ref(eq:GAS) to obtain the final filter
+$$\mu_t=\omega+\alpha \left(\frac{\sqrt{a}(y_{t-1}-\mu_{t-1})}{\mu_{t-1}}\right)+\beta \mu_{t-1}.$$
+
+Thus the updating equation consist of: a intercept, a score coefficient times the scaled direction, and a term consisting of an autoregressive coefficient times the previous value. We have know established the GAS model in our above setup.
+
+To find the log likelihood we use the common density $p(y_t \mid \mathcal{F}_{t-1})$ and it's logarithm as found above
+\begin{align*}
+\mathcal{L}\left(Y_{1:T}\mid \phi\right)&=\ln\left(p\left(y_1;\phi\right)\right)+\sum_{t=2}^T \ln\left(p\left(y_t \mid \mathcal{F}_{t-1};\phi\right)\right)\\
+&=\sum_{t=1}^T \ell_t\\
+&=T\cdot \ln\left(\frac{a^a}{\Gamma\left(a\right)}\right)+\left(a-1\right)\sum_{t=1}^T \ln\left(y_t\right) - a \sum_{t=1}^T \ln\left(\mu_t\right)+\frac{y_t}{\mu_t}.
+\end{align*}
+
+Where $\mu_t=\mu_t(\phi)$ and with parameter vector $\phi'=(\alpha, \beta, a, \omega)$.
+
+## Computational Part
+
+The relevant code can be found in Appendix file 'Code_Flow_38.R', attached with the document through WiseFlow. The code is fully documented with comments throughout all the functions.
+
+To estimate the GAS-GAMMA model as discussed in the above Theoretical Part (and similiarly for the following models in the Empirical Part), we create three functions ***GASGAMMA_Filter***, ***NegLogLikelihood*** and ***Estimate_GASGAMMA***.
+
+***GASGAMMA_Filter*** is the filter for the GAS-GAMMA model. It takes the vector of values and a vector of parameters as input. Here we take use of the updating equation for $\mu_t$ established in the Theoretical Part. Through a loop we compute the next value of $\mu_t$, from $t=1,\dots, T$, where we set
+$$\mu_1 = \mathbb{E}(\mu_t)=\frac{\omega}{1-\beta},$$
+
+thus the first value is set to the unconditional expectation of $\mu_t$. Because of the possibility of negative and/or zero values we make an *if* statement checking for negative and/or zero values. Further we compute the log likelihood associated with the parameters and the values of $\mu_t$, using the established function $L\left(Y_{1:T}\mid \phi\right)$ as deduced in the Theoretical Part.
+
+***NegLogLikelihood*** is the helper function for finding the maximum likelihood estimates of our parameters. It takes the vector of values and a vector of parameters as input. It computes the negative log likelihood
+$$N\mathcal{L}=-\mathcal{L}\left(Y_{1:T}\mid \phi\right).$$
+
+***Estimate_GASGAMMA*** estimates the GAS-GAMMA model by first finding maximum likelihood estimates of our parameters, which are obtained by optimizing the negative log likelihood. The used optimizer, ***gosolnp***, is available through the **Rsolnp** R package, it randomly chooses starting values for the parameter vector constrained to the lower and upper bounds. After convergence of a solution the final parameters are then feeded to the ***GASGAMMA_Filter*** to obtain the final filtered values of $\mu_t$ and the log likelihood value. We also compute the Bayesian Information Criterion which penalizes models with many parameters it is defined as
+$$\text{BIC}=\ln(n)k-2\hat{\mathcal{L}}\left(Y_{1:T}\mid \hat{\phi}\right).$$
+
+Thus it serves as a measure of choosing the 'best' model. A lower BIC is favourable to a high BIC.
+
+Similar functions are created for the rest of the models described in the Empirical Part.
+
+## Empirical Part
+
+Using Yahoo Finance data of the VIX spanning from 2010-01-01 to 2019-01-01 we estimate the GAS model using the functions written in code 'Code_Flow_38.R' and described in Section \@ref(computational-part). It shall be noted that the maximum likelihood estimates obtained are highly dependent upon the initial values set for each parameter, though using the ***gosolnp*** function which randomly sets starting values, as described above, seem to converge always.
+
+Table \@ref(tab:VIXtab) show the five first observations. We will only use the adjusted column.
+```{r VIXtab, echo=FALSE}
+VIXt <- data.frame(VIX[1:5])
+
+VIX[1:5, 1:6] %>% 
+  knitr::kable(caption = 'The first 5 observations of VIX.',
+               booktabs=TRUE,
+               align = c('r','r','r', 'r', 'r', 'r'),
+               row.names = F,
+               linesep = "") %>% 
+   kableExtra::kable_styling(bootstrap_options = "striped",
+                             latex_options = c("striped", "hold_position"),
+                             full_width = F)
+```
+
+Figure \@ref(fig:VIXfig) show the evolution of the time series.
+```{r VIXfig, echo = FALSE, fig.align='center', fig.cap='VIX from 2010-01-01 to 2019-01-01.', fig.pos='htbp!', fig.width=18, fig.asp=0.35}
+# Obtains the relevant data from the VIX Index. We are only gonna use VIX.Adjusted.
+
+# Plot VIX.
+plot(y    = VIX$VIX.Adjusted,
+     x    = index(VIX),
+     type = 'l',
+     xaxs = "i",
+     yaxs = "i",
+     xlab = 'Date',
+     ylab = 'VIX',
+     main = 'Volatility Index')
+```
+
+The spikes occur at events such as the Eurozone Crisis, the U.S. Debt-Ceiling Crisis, Brexit, the 2016 U.S. Election, Trump impeachment, Trade-war uncertainty, etc.
+
+### GAS
+
+To obtain the GAS-GAMMA model for our VIX data, we feed the relevant quantities to the relevant functions, using the constraints
+$$\omega\in [-0.5, 0.5],\quad \alpha \in [0.001, 1.5],\quad \beta \in [0.01, 0.999]\quad\text{and}\quad a\in[0.1,300],$$
+
+as given in the assignment text. The maximum likelihood estimates of our parameters are
+$$\hat{\omega}=0.499,\quad \hat{\alpha}=1.198,\quad \hat{\beta}=0.972 \quad\text{and}\quad \hat{a}=154.287.$$
+
+One may see that the intercept $\hat{\omega}$ is close to the upper bound, though experimenting with a higher bound, didn't yield better results. We obtain a log likelihood of $-3817.897$ and a BIC of $7666.694$.
+
+### Constrained GAS
+
+Considering the constrained version of the GAS-GAMMA model, we have to set the extra constraint
+$$\mu_t=\mu\quad\forall t.$$
+
+We set the value of $\mu$ to the unconditional expectation
+$$\mu:=\frac{\omega}{1-\beta}=\mathbb{E}(\mu_t),$$
+
+Thus in this constrained model there are three parameters to estimate $\omega, \beta$ and $a$, and we never update $\mu$. Functions as the ones desribed above in Section \@ref(computational-part) have been made to accomplish the task of estimating in this model.
+
+Using the same constraints as in the GAS-GAMMA model for the relevant parameters
+$$\omega\in [-0.5, 0.5],\quad \beta \in [0.01, 0.999]\quad\text{and}\quad a\in[0.1,300].$$
+
+We obtain the following maximum likelihood estimates of our parameters are
+$$\hat{\omega}=0.393,\quad \hat{\beta}=0.977 \quad\text{and}\quad \hat{a}=10.396.$$
+
+It shall be noted that the intercept estimate is a bit volatile. We obtain a log likelihood of $-6905.022$ and a BIC of $13833.22$. Thus the model performance is worse than the GAS-GAMMA model. This was also expected since the mean is constant throughout time, and at the same time we only estimate one parameter less. Thus the BIC penalizes the model slightly less, but still becomes higher than in the GAS-GAMMA model.
+
+### MEM
+
+The Multiplicative Error Models suggested by [@Engle2006] are used to model positive valued series such as the VIX, and it serves well to use as a comparison to the GAS models above. [@Engle2006] show that one-month-ahead forecasts made from a MEM model match well the market-based volatility measure provided by the VIX.
+
+We again assume that
+$$Y_t\mid \mathcal{F}_{t-1}\sim\mathcal{G}(\mu_t,a),$$
+
+and the updating equation for the mean, $\mu$, is given as
+$$\mu_t=\kappa+\eta y_{t-1}+\phi \mu_{t-1}.$$
+Thus the updating equation consist of: a intercept, a coefficient times the value of VIX, and a term consisting of an autoregressive coefficient times the previous value.
+
+We set the value of $\mu_1$ to the unconditional expectation
+$$\mu_1:=\frac{\kappa}{1- \eta - \phi}=\mathbb{E}(\mu_t),$$
+
+Thus in this model there are four parameters to estimate $\kappa, \eta, \phi$ and $a$. Functions as the ones desribed above in Section \@ref(computational-part) have been made to accomplish the task of estimating in this model.
+
+Using the constraints
+$$\kappa\in [0.1, 10],\quad \eta \in [0.01, 0.99],\quad \phi \in [0.01, 0.99]\quad\text{and}\quad a\in[0.1,300].$$
+
+as given in the assignment text. The maximum likelihood estimates of our parameters are
+$$\hat{\kappa}=0.410,\quad \hat{\eta}=0.945,\quad \hat{\phi}=0.033 \quad\text{and}\quad \hat{a}=162.832.$$
+
+We obtain a log likelihood of $-3756.546$ and a BIC of $7543.991$. Compared to the GAS-GAMMA model we observe a slightly better BIC that yields the logic that more information is obtained directly through the values of $Y_t$ than through the scaled direction $u_t$.
+
+### Comparison
+
+Table \@ref(tab:comptab) gives a summary of the log likelihood, estimates and BIC of every model examined. Comparing the GAS-GAMMA models solely the highest log likelihood is reported by the GAS-GAMMA with time varying $\mu$. Comparing all of the models the highest log likelihood is associated with the MEM-GAMMA model.
+
+Comparing the parameters in the GAS-GAMMA models, the contrained version has similar parameter estimates except for the scale $a$, which is compressed to overcome the non-flexibility of the model.
+
+Comparing the autoregressive coefficients we see that $\phi$ from the MEM-GAMMA model is noticeably lower than the $\beta$'s in the GAS-GAMMA models.
+
+```{r comptab, echo=FALSE}
+Fit_GAS_GAMMA_c$Par <- c(Fit_GAS_GAMMA_c$Par[1], 0, Fit_GAS_GAMMA_c$Par[2], Fit_GAS_GAMMA_c$Par[3])
+
+tab <- data.frame(rbind(Fit_GAS_GAMMA$FilteredValues$LLK, Fit_GAS_GAMMA_c$FilteredValues$LLK, Fit_MEM_GAMMA$FilteredValues$LLK))
+
+tab[2:5] <- rbind(Fit_GAS_GAMMA$Par, Fit_GAS_GAMMA_c$Par, Fit_MEM_GAMMA$Par)
+
+tab[6] <- rbind(Fit_GAS_GAMMA$BIC, Fit_GAS_GAMMA_c$BIC, Fit_MEM_GAMMA$BIC)
+
+colnames(tab) <- c('$\\hat{\\mathcal{L}}$', '$\\hat{\\omega} \\, (\\hat{\\kappa})$', '$\\hat{\\alpha} \\, (\\hat{\\eta})$', '$\\hat{\\beta} \\, (\\hat{\\phi})$', '$\\hat{a}$', 'BIC')
+rownames(tab) <- c('GAS-GAMMA', 'GAS-GAMMA-C', 'MEM-GAMMA')
+
+if (knitr::is_html_output()) {
+tab %>% 
+  knitr::kable(caption = 'Summary of all models.',
+               booktabs=TRUE,
+               align = c(rep('c',6)),
+               linesep = "") %>% 
+   kableExtra::kable_styling(bootstrap_options = "striped",
+                             latex_options = c("striped", "hold_position"),
+                             full_width = F)
+} else {
+tab %>% 
+  knitr::kable(caption = 'Summary of all models.',
+               booktabs=TRUE,
+               align = c(rep('c',6)),
+               linesep = "",
+               escape='F') %>% 
+   kableExtra::kable_styling(bootstrap_options = "striped",
+                             latex_options = c("striped", "hold_position"),
+                             full_width = F)
+}
+```
+
+Given the fact that the MEM-GAMMA model yields best performance from a BIC perspective we have chosen to continue with this model. Thus Figure \@ref(fig:MEMfig) gives the summary of the MEM-GAMMA model.
+
+```{r MEMfig, echo=FALSE, fig.align='center', fig.cap='i) VIX, ii) Filtered mean, iii) Filtered variance.', fig.width=18, fig.height=15, fig.pos='htbp!'}
+par(mfrow=c(3,1))
+
+plot(y    = VIX$VIX.Adjusted,
+     x    = index(VIX),
+     type = 'l',
+     xaxs = "i",
+     yaxs = "i",
+     xlab = 'Date',
+     ylab = 'VIX',
+     main = 'i) VIX Index')
+
+plot(y    = Fit_MEM_GAMMA$FilteredValues$Mu,
+     x    = index(VIX),
+     type = 'l',
+     xaxs = "i",
+     yaxs = "i",
+     xlab = 'Date',
+     ylab = expression(mu),
+     main = 'ii) Mean')
+
+plot(y    = Fit_MEM_GAMMA$FilteredValues$Mu^2/Fit_MEM_GAMMA$Par[4],
+     x    = index(VIX),
+     type = 'l',
+     xaxs = "i",
+     yaxs = "i",
+     xlab = 'Date',
+     ylab = expression(sigma^2),
+     main = 'iii) Variance')
+```
+
+Here the conditional variance at time $t$ is computed as
+$$\mathbb{V}(Y_t\mid\mathcal{F}_{t-1})=\frac{\mu_t^2}{a}.$$
+
+All the three time series plots are similar as expected. 
+\newpage
